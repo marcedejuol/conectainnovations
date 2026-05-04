@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Conecta Innovations - Próximamente. Estamos trabajando en algo increíble." />
+  <title>Conecta Innovations | Próximamente</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <span class="logo-text">Conecta <strong>Innovations</strong></span>
+      </div>
+    </header>
+
+    <main>
+      <div class="badge">En construcción</div>
+      <h1>Estamos preparando<br />algo increíble</h1>
+      <p class="subtitle">
+        Nuestro equipo está trabajando para traerte una experiencia única.<br />
+        Pronto estaremos listos.
+      </p>
+
+      <div class="countdown" id="countdown">
+        <div class="countdown-item">
+          <span class="count" id="days">00</span>
+          <span class="label">Días</span>
+        </div>
+        <div class="countdown-item">
+          <span class="count" id="hours">00</span>
+          <span class="label">Horas</span>
+        </div>
+        <div class="countdown-item">
+          <span class="count" id="minutes">00</span>
+          <span class="label">Minutos</span>
+        </div>
+        <div class="countdown-item">
+          <span class="count" id="seconds">00</span>
+          <span class="label">Segundos</span>
+        </div>
+      </div>
+
+      <div class="notify-form">
+        <p>¿Quieres que te avisemos cuando lancemos?</p>
+        <form id="notifyForm">
+          <input
+            type="email"
+            id="emailInput"
+            placeholder="tu@correo.com"
+            required
+            autocomplete="email"
+          />
+          <button type="submit">Notifícame</button>
+        </form>
+        <p class="form-feedback" id="formFeedback"></p>
+      </div>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Conecta Innovations. Todos los derechos reservados.</p>
+    </footer>
+  </div>
+
+  <div class="bg-circles" aria-hidden="true">
+    <div class="circle circle-1"></div>
+    <div class="circle circle-2"></div>
+    <div class="circle circle-3"></div>
+  </div>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>
