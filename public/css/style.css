@@ -1,0 +1,130 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --green: #204E27;
+  --green-light: #2d6b36;
+  --text: #1a1a1a;
+  --text-muted: #5a5a5a;
+  --bg: #ffffff;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
+}
+
+header {
+  display: flex;
+  justify-content: flex-start;
+  padding-bottom: 0;
+}
+
+.logo {
+  font-size: 1.25rem;
+  font-weight: 300;
+  color: var(--text);
+  letter-spacing: -0.01em;
+}
+
+.logo span {
+  font-weight: 300;
+}
+
+.logo strong {
+  font-weight: 700;
+  color: var(--green);
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 4rem 0;
+  gap: 1.5rem;
+}
+
+.tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--green);
+  border: 1.5px solid var(--green);
+  border-radius: 100px;
+  padding: 0.3rem 0.9rem;
+  width: fit-content;
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: var(--text);
+}
+
+.sub {
+  font-size: 1rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  max-width: 460px;
+}
+
+.btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.85rem 1.6rem;
+  background: var(--green);
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 8px;
+  width: fit-content;
+  transition: background 0.2s;
+}
+
+.btn-whatsapp:hover {
+  background: var(--green-light);
+}
+
+footer {
+  text-align: left;
+  color: #aaa;
+  font-size: 0.8rem;
+  padding-top: 1rem;
+  border-top: 1px solid #ececec;
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .btn-whatsapp {
+    width: 100%;
+    justify-content: center;
+  }
+}
