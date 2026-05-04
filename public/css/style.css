@@ -5,15 +5,11 @@
 }
 
 :root {
-  --primary: #6c63ff;
-  --primary-dark: #574fd6;
-  --accent: #00d4aa;
-  --bg: #0d0d1a;
-  --bg-card: #13132a;
-  --text: #f0f0ff;
-  --text-muted: #8888aa;
-  --border: rgba(108, 99, 255, 0.25);
-  --radius: 12px;
+  --green: #204E27;
+  --green-light: #2d6b36;
+  --text: #1a1a1a;
+  --text-muted: #5a5a5a;
+  --bg: #ffffff;
 }
 
 html, body {
@@ -22,260 +18,117 @@ html, body {
 
 body {
   font-family: 'Inter', sans-serif;
-  background-color: var(--bg);
+  background: var(--bg);
   color: var(--text);
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  overflow-x: hidden;
 }
 
-/* Background decorative circles */
-.bg-circles {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-  overflow: hidden;
-}
-
-.circle {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(80px);
-  opacity: 0.35;
-}
-
-.circle-1 {
-  width: 500px;
-  height: 500px;
-  background: var(--primary);
-  top: -150px;
-  right: -100px;
-}
-
-.circle-2 {
-  width: 350px;
-  height: 350px;
-  background: var(--accent);
-  bottom: -100px;
-  left: -80px;
-}
-
-.circle-3 {
-  width: 250px;
-  height: 250px;
-  background: var(--primary-dark);
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-/* Layout */
-.container {
-  position: relative;
-  z-index: 1;
+.page {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  max-width: 900px;
+  max-width: 680px;
   margin: 0 auto;
-  padding: 2rem 1.5rem;
+  padding: 2.5rem 1.5rem;
 }
 
 /* Header */
 header {
   display: flex;
-  justify-content: center;
-  padding: 1rem 0 2rem;
+  justify-content: flex-start;
+  padding-bottom: 0;
 }
 
-.logo-text {
-  font-size: 1.5rem;
+.logo {
+  font-size: 1.25rem;
   font-weight: 300;
-  letter-spacing: 0.05em;
   color: var(--text);
+  letter-spacing: -0.01em;
 }
 
-.logo-text strong {
+.logo span {
+  font-weight: 300;
+}
+
+.logo strong {
   font-weight: 700;
-  background: linear-gradient(90deg, var(--primary), var(--accent));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--green);
 }
 
-/* Main content */
+/* Main */
 main {
   flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  text-align: center;
-  gap: 2rem;
-  padding: 2rem 0;
+  padding: 4rem 0;
+  gap: 1.5rem;
 }
 
-.badge {
+.tag {
   display: inline-block;
-  padding: 0.4rem 1rem;
-  border: 1px solid var(--border);
-  border-radius: 100px;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   font-weight: 600;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--primary);
-  background: rgba(108, 99, 255, 0.08);
+  color: var(--green);
+  border: 1.5px solid var(--green);
+  border-radius: 100px;
+  padding: 0.3rem 0.9rem;
+  width: fit-content;
 }
 
 h1 {
-  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-size: clamp(2rem, 5vw, 3rem);
   font-weight: 700;
-  line-height: 1.2;
-  letter-spacing: -0.02em;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: var(--text);
 }
 
-.subtitle {
-  font-size: 1.05rem;
+.sub {
+  font-size: 1rem;
   color: var(--text-muted);
   line-height: 1.7;
-  max-width: 500px;
+  max-width: 460px;
 }
 
-/* Countdown */
-.countdown {
-  display: flex;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.countdown-item {
-  display: flex;
-  flex-direction: column;
+/* WhatsApp button */
+.btn-whatsapp {
+  display: inline-flex;
   align-items: center;
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 1.2rem 1.6rem;
-  min-width: 90px;
-}
-
-.count {
-  font-size: 2.5rem;
-  font-weight: 700;
-  background: linear-gradient(135deg, var(--primary), var(--accent));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  line-height: 1;
-}
-
-.label {
-  font-size: 0.75rem;
-  color: var(--text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  margin-top: 0.4rem;
-}
-
-/* Notify form */
-.notify-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.75rem;
-  width: 100%;
-  max-width: 480px;
-}
-
-.notify-form > p {
-  color: var(--text-muted);
-  font-size: 0.95rem;
-}
-
-.notify-form form {
-  display: flex;
-  width: 100%;
-  gap: 0.5rem;
-}
-
-.notify-form input {
-  flex: 1;
-  padding: 0.75rem 1rem;
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  color: var(--text);
-  font-size: 0.95rem;
-  font-family: inherit;
-  outline: none;
-  transition: border-color 0.2s;
-}
-
-.notify-form input:focus {
-  border-color: var(--primary);
-}
-
-.notify-form input::placeholder {
-  color: var(--text-muted);
-}
-
-.notify-form button {
-  padding: 0.75rem 1.5rem;
-  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-  border: none;
-  border-radius: var(--radius);
-  color: #fff;
+  gap: 0.6rem;
+  padding: 0.85rem 1.6rem;
+  background: var(--green);
+  color: #ffffff;
+  text-decoration: none;
   font-size: 0.95rem;
   font-weight: 600;
-  font-family: inherit;
-  cursor: pointer;
-  white-space: nowrap;
-  transition: opacity 0.2s, transform 0.1s;
+  border-radius: 8px;
+  width: fit-content;
+  transition: background 0.2s;
 }
 
-.notify-form button:hover {
-  opacity: 0.9;
-  transform: translateY(-1px);
-}
-
-.notify-form button:active {
-  transform: translateY(0);
-}
-
-.form-feedback {
-  font-size: 0.85rem;
-  min-height: 1.2em;
-  color: var(--accent);
+.btn-whatsapp:hover {
+  background: var(--green-light);
 }
 
 /* Footer */
 footer {
-  text-align: center;
-  padding: 2rem 0 1rem;
-  color: var(--text-muted);
-  font-size: 0.85rem;
+  text-align: left;
+  color: #aaa;
+  font-size: 0.8rem;
+  padding-top: 1rem;
+  border-top: 1px solid #ececec;
 }
 
-/* Responsive */
 @media (max-width: 480px) {
-  .notify-form form {
-    flex-direction: column;
+  h1 {
+    font-size: 1.8rem;
   }
 
-  .countdown {
-    gap: 0.75rem;
-  }
-
-  .countdown-item {
-    padding: 1rem 1.2rem;
-    min-width: 70px;
-  }
-
-  .count {
-    font-size: 2rem;
+  .btn-whatsapp {
+    width: 100%;
+    justify-content: center;
   }
 }
